@@ -1,28 +1,26 @@
-pres
+Stock Analyisis
 ========================================================
-author: 
-date: 
+
+author: Shrey Agarwal
+date: 11th November 2020
 autosize: true
 
-First Slide
+Stock Graph
 ========================================================
 
-For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
-========================================================
-
-```{r}
-summary(cars)
+```{r stock ,echo=FALSE}
+library(tidyverse)
+library(plotly)
+library(quantmod)
+tsla<- getSymbols("TSLA", auto.assign = F)
+        amzn<-getSymbols("AMZN",auto.assign = F)
+        tcl1<-tsla$TSLA.Adjusted
+        amz1<-amzn$AMZN.Adjusted
+       
+      plot(tcl1,type="l",subset = "2014-01::2016-01")
+      plot(amz1,type="l",subset = "2014-01::2016-01")
 ```
 
-Slide With Plot
-========================================================
 
-```{r, echo=FALSE}
-plot(cars)
-```
+https://github.com/shreyagrwal/present
